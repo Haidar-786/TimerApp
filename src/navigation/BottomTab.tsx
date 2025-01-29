@@ -1,9 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { useTheme } from "@react-navigation/native";
 import { FC } from "react";
-import { RFValue } from "react-native-responsive-fontsize";
 import { Platform } from "react-native";
-import { Colors } from "../constants/Colors";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Timers from "../screens/Timers";
 import HistoryScreen from "../screens/HistoryScreen";
@@ -11,19 +8,18 @@ import HistoryScreen from "../screens/HistoryScreen";
 const Tab = createBottomTabNavigator();
 
 const BottomTab: FC = () => {
-  const { colors } = useTheme();
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
-          paddingTop: Platform.OS === "ios" ? RFValue(5) : 0,
+          paddingTop: Platform.OS === "ios" ? 5 : 0,
           paddingBottom: Platform.OS === "ios" ? 30 : 10,
-          backgroundColor: colors.background,
+          backgroundColor: '#000',
           height: Platform.OS === "android" ? 70 : 80,
         },
-        tabBarActiveTintColor: Colors.active_tab,
+        tabBarActiveTintColor: '#117777',
         tabBarInactiveTintColor: "#447777",
         headerShadowVisible: true,
         tabBarLabelStyle: {

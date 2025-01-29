@@ -169,9 +169,9 @@ export const TimersScreen = () => {
 
     useEffect(() => {
         fetchTimersFromStorage();
-        return () => {
-            Object.values(intervalRefs.current).forEach(clearInterval);
-        };
+        // return () => {
+        //     Object.values(intervalRefs.current).forEach(clearInterval);
+        // };
     }, []);
 
     const updateAllTimers = (status: 'Paused' | 'Running' | 'Completed', category?: string) => {
@@ -252,7 +252,6 @@ export const TimersScreen = () => {
     };
 
     const groupedTimers = groupTimersByCategory();
-    console.log(groupedTimers, 'groupedTimers');
 
     // Function to show and dismiss the alert
     const showAlertAndDismiss = (title: string, message: string) => {
